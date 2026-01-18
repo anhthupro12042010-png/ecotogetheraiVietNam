@@ -4,7 +4,8 @@ import cv2
 from PIL import Image, ExifTags
 import tempfile
 from database import create_table, get_user, update_user
-import tflite_runtime.interpreter as tflite
+from tensorflow import lite as tflite
+import os
 
 
 # ================== PAGE CONFIG ==================
@@ -256,3 +257,4 @@ if total >= 500:
 else:
     st.info(f"Còn thiếu {500 - total} điểm")
 st.markdown('</div>', unsafe_allow_html=True)
+
